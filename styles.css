@@ -1,0 +1,44 @@
+:root {
+    --color-primary: #F9AABB;
+    --color-secondary: #ffffff;
+    --color-background: #F5F5F5;
+    --color-text: #DE7F50;
+    --font-important: 1rem;
+}
+
+* {
+    font-family: "Glegoo", serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background: linear-gradient(180deg, var(--color-secondary), var(--color-background));
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.main-content {
+    margin: auto;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 120px;
+    flex-direction: column;
+    gap: 50px;
+
+    img {width: 250px;}
+
+    button {
+        transition: 0.2s ease-in;
+        padding: 1.5em;
+        color: var(--color-text);
+        font-size: var(--font-important);
+        font-weight: 700;
+        background-color: var(--color-primary);
+        border: 2px solid var(--color-secondary);
+        border-radius: 100px;
+        color: var(--color-secondary);
+    }
+}
