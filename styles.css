@@ -1,5 +1,5 @@
 :root {
-    --color-primary: #FF7FAE;
+    --color-primary: #FF839D;
     --color-secondary: #ffffff;
     --color-background: #F5F5F5;
     --color-text: #444;
@@ -7,11 +7,11 @@
     --font-important: 1.1rem;
     --font-co-important: 1rem;
 
-    --margin-standard: 2rem;
+    --margin-standard: 100px;
 
     --padding-button: 1.2rem;
 
-    --gap-standard: 50px;
+    --gap-standard: 10px;
 }
 
 * {
@@ -47,21 +47,10 @@ mark {
     flex-direction: column;
 
     img {width: 260px;}
-
-    button {
-        padding: var(--padding-button);
-        transition: 0.2s ease-in;
-        background-color: var(--color-primary) !important;
-        border: 2px solid var(--color-primary);
-        border-radius: 10px;
-        font-size: var(--font-important);
-        font-weight: 800;
-        color: var(--color-secondary);
-    }
     
     p {
         color: var(--color-text);
-        font-size: var(--font-co-important);
+        font-size: var(--font-important);
 
         span {
             color: var(--color-text);
@@ -81,37 +70,60 @@ mark {
 }
 
     .menu {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: auto auto; 
-            place-items: center;
-            padding: 50px;
-            column-gap: var(--gap-standard);
+        background-color: #f3eded;
+        border-radius: 40px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto auto; 
+        place-items: center;
+        column-gap: var(--gap-standard);
+        padding: 25px;
+        gap: 35px;
+        margin: 20px;
 
             @media screen and (max-width: 768px) {
                 grid-template-columns: 1fr; 
-                padding: 5px;
-                place-items: start;
+                width: auto;
+                margin: auto !important;
+
             }
+        }
+
+        .product:nth-child(1),
+        .product:nth-child(2){
+            /* padding: 15px;
+            border: 1px solid blue; */
+            margin-top: var(--margin-standard);
         }
 
         .product {
             display: flex;
+            padding-left: 30px;
             gap: var(--gap-standard);
-            margin-bottom: var(--margin-standard); 
+            width: 40vw;
                 @media screen and (max-width: 768px) {
+                width: auto;
+                padding: 0px;
                 gap: 20px;
                 flex-direction: column;
             }
    
             .img-product {
-                width: 80%;
-                background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLsqgqgob2Nbhl_WT5Xh735xO7gZzlpuf7xA&s');
-                background-repeat: no-repeat;
-                background-size: contain;
-                background-position: center;
-                transition: 0.4s ease-in;
+                transition: 0.2s ease-in;
                 border: 0px solid var(--color-primary);
+                &:hover {
+                    scale: 1.2;
+                }
+                
+                img {
+                    border-radius: 10px;
+                    width: 150px;
+
+                @media screen and (max-width: 768px) {
+                width: 200px;
+                flex-direction: column;
+            }
+                }
 
                 @media screen and (max-width: 768px) {
                 height: 200px;
@@ -120,6 +132,10 @@ mark {
 
             .product-information {
                 width: 40vw;
+
+                .product-information-paragraph {
+                    width: 60%;
+                }
 
                 .product-information-title {
                     color: var(--color-primary);
@@ -147,19 +163,15 @@ mark {
                     }
 
                     .icon {   
-                        background-color: transparent !important;
+                        background-color: transparent;
                         cursor: pointer;
-                        padding: 1px;
-                        width: 20%;
                         border: none;
+                        transition: 0.3s ease;
+
                         svg {
                             color: var(--color-primary);
                             padding-top: 5px;
                             width: 2rem;
-                            
-                            @media screen and (max-width: 768px) {
-                            margin-left: -50px;
-                            }
 
                         }
                     }

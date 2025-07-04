@@ -1,11 +1,11 @@
 const menu = document.querySelector('.menu');
 
-function createProduct(name, price, description) {
+function createProduct(url, alt, name, price, description) {
   const divProduct = document.createElement("div");
   divProduct.classList.add("product");
 
   divProduct.innerHTML = `
-    <div class="img-product"></div>
+    <div class="img-product"><img src="${url}" alt="${alt}"></div>
     <div class="product-information">
       <h3 class="product-information-title">${name}</h3>
       <p class="product-information-paragraph">${description}</p>
@@ -23,7 +23,9 @@ function createProduct(name, price, description) {
   menu.appendChild(divProduct);
 }
 
-createProduct("Bolo de Chocolate", "R$ 19,99", "Delicioso bolo com cobertura cremosa.");
-createProduct("Bolo de Morango", "R$ 21,99", "Bolo fresquinho com morangos naturais.");
-createProduct("Bolo de Cenoura", "R$ 18,50", "Tradicional bolo de cenoura com calda de chocolate.");
-createProduct("Bolo de Cenoura", "R$ 18,50", "Tradicional bolo de cenoura com calda de chocolate.");
+createProduct("https://tse3.mm.bing.net/th/id/OIP.NI-EpOoQDQUTq8KuvBA8EQHaHa?rs=1&pid=ImgDetMain&o=7&rm=3", "bolo no pote", "Bolo de Chocolate", "R$ 19,99", "Delicioso bolo com cobertura cremosa.");
+createProduct("https://i.pinimg.com/736x/ae/4c/26/ae4c26186932e8cf6fdaa0eeebf22553.jpg", "bolo no pote", "Bolo de Morango", "R$ 21,99", "Bolo fresquinho com morangos naturais.");
+createProduct("https://tse3.mm.bing.net/th/id/OIP.NI-EpOoQDQUTq8KuvBA8EQHaHa?rs=1&pid=ImgDetMain&o=7&rm=3", "bolo no pote", "Bolo de Chocolate", "R$ 19,99", "Delicioso bolo com cobertura cremosa.");
+createProduct("https://i.pinimg.com/736x/ae/4c/26/ae4c26186932e8cf6fdaa0eeebf22553.jpg", "bolo no pote", "Bolo de Morango", "R$ 21,99", "Bolo fresquinho com morangos naturais.");
+createProduct("https://tse3.mm.bing.net/th/id/OIP.NI-EpOoQDQUTq8KuvBA8EQHaHa?rs=1&pid=ImgDetMain&o=7&rm=3", "bolo no pote", "Bolo de Chocolate", "R$ 19,99", "Delicioso bolo com cobertura cremosa.");
+createProduct("https://i.pinimg.com/736x/ae/4c/26/ae4c26186932e8cf6fdaa0eeebf22553.jpg", "bolo no pote", "Bolo de Morango", "R$ 21,99", "Bolo fresquinho com morangos naturais.");
