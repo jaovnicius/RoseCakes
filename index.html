@@ -9,34 +9,50 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Glegoo:wght@400;700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Inclui Animate.css via CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
 </head>
 <body>
-    <header>
-        <div class="shopping">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
-            </svg>
-        </div>
-    </header>
+<header class="navbar bg-white shadow-sm">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-bold text-primary" href="#"></a>
+    <button class="btn btn-outline-primary d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu">
+      <i class="bi bi-bag-fill"></i>
+    </button>
+
+    <div class="d-none d-lg-flex align-items-center gap-3">
+      <a href="#" class="nav-link">Sobre nós</a>
+      <a href="#" class="nav-link">Cardápio</a>
+      <a href="#" class="nav-link">Contatos</a>
+      <button class="btn btn-outline-primary">
+        <i class="bi bi-bag-fill"></i>
+      </button>
+    </div>
+  </div>
+</header>
     <main>
         <section class="main-content">
             <div class="main-content-logo">
-                <img src="./assets/logotipo.png" alt="">
+                <img class="logo-desktop animate__animated animate__fadeInLeft" src="./assets/logotipo.png" alt="">
 
                 <div class="main-content-text">
+                <img class="logo-mobile animate__animated animate__fadeInLeft" src="./assets/logotipo.png" alt="">
                 <h1>ROSE BOLOS</h1> 
-                <h2>Delícias no Pote 🍰✨</h2>
-                <p></p>
+                <h2>Delícias no Pote</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe quisquam facere iste? Enim debitis sunt eveniet fugiat aliquam alias nam itaque odit perspiciatis inventore, officiis optio ea qui quisquam iste? </p>
+                <button>ENTRAR EM CONTATO</button>
             </div>
             </div>
-        
         </section>
 
-        <section class="menu"></section>
+        <section class="menu border border-2 shadow-sm"></section>
     </main>
 
     <footer>
-        <div class="contact">
+        <div class="contact animate__animated animate__fadeInUp">
             <div class="contact-icons">
             <i class="bi bi-whatsapp"></i>
             <i class="bi bi-instagram"></i>
@@ -45,5 +61,7 @@
         </div>
     </footer>
 <script src="main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>

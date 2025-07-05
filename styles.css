@@ -16,218 +16,310 @@
 
 * {
     font-family: "Montserrat", serif;
-    
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    background-color: #F0E6EF;
-    background-repeat: no-repeat;
-    height: 100vh;
+    background-color: #fff;
 }
 
 header {
-    margin-bottom: 50px;
+    padding: 20px !important;
 }
 
-mark {
-    background-color: transparent;
+.navbar {
+    background-color: var(--color-secondary);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.navbar-brand {
     color: var(--color-primary);
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 1.5rem;
+}
+
+.navbar-brand:hover {
+    color: var(--color-primary);
+}
+
+.navbar-nav .nav-link {
+    color: var(--color-text);
     font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link:hover {
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+.btn-outline-primary {
+    background-color: var(--color-primary) !important;
+    border-color: var(--color-primary) !important;
+    color: #fff;
+}
+
+.bi.bi-bag-fill {
+    color: #fff !important;
 }
 
 
-        header {
-            background-color: #F4F9E9;
-            .shopping {
-                display: flex;
-                justify-content: right;
-                align-items: center;
-                padding: 15px;
-                svg {
-                    cursor: pointer;
-                    color: #FF7FAE;
-                    margin-right: 20px;
-                    width: 30px;
-                }
-            }
-        }
-
-        h3 {
-            font-family: "Montserrat", sans-serif;
-            font-weight: 500;
-            font-style: italic;
-            margin-bottom: 20px;
-            font-size: 1.5rem;
-        }
-
-        .contact {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 15px;
-            background-color: #F4F9E9;
-
-            .contact-icons {
-                display: flex;
-                flex-direction: row;
-                gap: 50px;
-       
-
-                i {
-                    cursor: pointer;
-                    font-size: 1.5rem;
-                    color: #FF7FAE;
-                }
-            }
-        }
-
-        .main-content {
-            height: 50vh;
-            margin-left: 50px;
-            display: flex;
-            align-items: center;
-
-            .main-content-logo {
-                display: flex;
-                align-items: center;
+.btn-outline-primary i {
+    color:(--color-primary) !important;
+}
 
 
+h3, h2 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
 
-                img {
-                    width: 200px;
-                }
+.main-content {
+    margin: 90px;
+    display: flex;
+    align-items: center;
+}
 
-                .main-content-text {
-                    margin-left: 2.5rem;
-                    line-height: 1.2;
-                    h1 {
-                        color: #FF7FAE;
-                        font-size: 4.5rem;
-                    }
-                    h2 {
-                        color: #c9c2c2;
-                        font-size: 3rem;
-                    }
-                }
-            }
-        }
+.main-content-logo {
+    display: flex;
+    align-items: center;
+}
+
+.main-content-logo img.logo-desktop {
+    width: 280px;
+}
+
+.main-content-text {
+    margin-left: 2.5rem;
+    line-height: 1.2;
+}
+
+.main-content-text .logo-mobile {
+    display: none;
+}
+
+.main-content-text h1 {
+    color: var(--color-primary) !important;
+    font-size: 4rem;
+}
+
+.main-content-text h2 {
+    color: #c9c2c2;
+    font-size: 3rem;
+}
+
+.main-content-text p {
+    width: 80vh;
+    font-size: 1rem;
+    margin: 35px 0px;
+}
+
+.main-content-text button {
+    border-radius: 100px;
+    padding: 13px;
+    font-size: 1.2rem;
+    font-weight: 400;
+    width: 60%;
+    border: none;
+    background-color: var(--color-primary);
+    color: #fff;
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+}
+
+.contact-icons {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+
+.contact-icons i {
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #FF7FAE !important;
+}
+
+.menu {
+    border-radius: 40px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px;
+    padding: 25px;
+    margin: 20px;
+    place-items: center;
+}
+
+.product {
+    display: flex;
+    flex-direction: row;
+    gap: var(--gap-standard);
+    width: 40vw;
+    padding-left: 30px;
+}
+
+.product:nth-child(1),
+.product:nth-child(2) {
+    margin-top: var(--margin-standard);
+}
+
+.img-product {
+    transition: 0.2s ease-in;
+}
+
+.img-product:hover {
+    transform: scale(1.2);
+}
+
+.img-product img {
+    border-radius: 10px;
+    width: 150px;
+}
+
+.product-information {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 40vw;
+}
+
+.product-information-title {
+    color: var(--color-primary);
+}
+
+.product-information-paragraph {
+    width: 80%;
+}
+
+.price_selection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 5px;
+}
+
+.price_selection_item {
+    font-weight: 800;
+}
+
+.price {
+    color: var(--color-primary);
+    font-weight: 900;
+}
+
+.icon {
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    transition: 0.3s ease;
+}
+
+.icon svg {
+    color: var(--color-primary);
+    padding-top: 5px;
+    width: 2rem;
+}
 
 
+@media screen and (max-width: 768px) {
+    .main-content {
+        margin: 80px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .main-content-logo {
+        flex-direction: column;
+    }
+
+    .main-content-logo img.logo-desktop {
+        display: none;
+    }
+
+    .main-content-text .logo-mobile {
+        display: block;
+        width: 200px;
+        margin: 0 auto 20px auto;
+    }
+
+    .main-content-text {
+        margin-left: 0;
+    }
+
+    .main-content-text h1 {
+        font-size: 2rem;
+    }
+
+    .main-content-text h2 {
+        font-size: 1.5rem;
+    }
+
+    .main-content-text p {
+        width: 80vh;
+        font-size: 1rem;
+    }
+
+    .main-content-text button {
+        padding: 15px;
+        font-size: 1rem;
+        width: 90%;
+
+    }
 
     .menu {
-        background-color: #F4F9E9;
-        border-radius: 40px;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: auto auto; 
-        place-items: center;
-        column-gap: var(--gap-standard);
-        padding: 25px;
-        gap: 35px;
-        margin: 20px;
+        grid-template-columns: 1fr;
+        width: 100%;
+        margin: 0px;
+        gap: 30px;
+    }
 
-            @media screen and (max-width: 768px) {
-                grid-template-columns: 1fr; 
-                width: auto;
-                margin: auto !important;
+    .product {
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+        gap: 20px;
+        align-items: left;
+    }
 
-            }
-        }
+    .product:nth-child(1) {
+        margin-top: 50px;
+    }
+    .product:nth-child(2) {
+        margin-top: 0px;
+    }
 
-        .product:nth-child(1),
-        .product:nth-child(2){
-            /* padding: 15px;
-            border: 1px solid blue; */
-            margin-top: var(--margin-standard);
-        }
+    .img-product img {
+        width: 80%;
+        max-width: 300px;
+    }
 
-        .product {
-            display: flex;
-            padding-left: 30px;
-            gap: var(--gap-standard);
-            width: 40vw;
-                @media screen and (max-width: 768px) {
-                width: auto;
-                padding: 0px;
-                gap: 20px;
-                flex-direction: column;
-            }
-   
-            .img-product {
-                transition: 0.2s ease-in;
-                border: 0px solid var(--color-primary);
-                &:hover {
-                    scale: 1.2;
-                }
-                
-                img {
-                    border-radius: 10px;
-                    width: 150px;
+    .product-information {
+        width: 100%;
+        align-items: left;
+    }
 
-                @media screen and (max-width: 768px) {
-                width: 200px;
-                flex-direction: column;
-            }
-                }
+    .product-information-paragraph {
+        width: 100%;
+        text-align: left;
+    }
 
-                @media screen and (max-width: 768px) {
-                height: 200px;
-            }
-            }
+    .icon {
+        margin-bottom: 24px;
+    }
 
-            .product-information {
-                width: 40vw;
-
-                .product-information-paragraph {
-                    width: 60%;
-                }
-
-                .product-information-title {
-                    color: var(--color-primary);
-                    
-                }
-
-                .price_selection {
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    margin: 0px 5px;
-                    @media screen and (max-width: 768px) {
-                        margin: 0px;
-                    }
-
-
-                    .price_selection_item {
-                        font-weight: 800;
-                    }
-
-                    .price {
-                        color: var(--color-primary);
-                        font-weight: 900;
-
-                    }
-
-                    .icon {   
-                        background-color: transparent;
-                        cursor: pointer;
-                        border: none;
-                        transition: 0.3s ease;
-
-                        svg {
-                            color: var(--color-primary);
-                            padding-top: 5px;
-                            width: 2rem;
-
-                        }
-                    }
-                }
-
-                @media screen and (max-width: 768px) {
-                width: 100vw;
-                }
-            }
-        }
+    .icon svg{
+        width: 30px;
+    }
+}
