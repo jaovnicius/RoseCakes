@@ -26,7 +26,16 @@ body {
 }
 
 header {
+    position: sticky !important;
+    top: 0;
+    background-color: var(--color-seconday);
     padding: 20px !important;
+    z-index: 10;
+}
+
+mark {
+    background-color: transparent !important;
+    color: var(--color-primary) !important;
 }
 
 .navbar {
@@ -51,11 +60,7 @@ header {
     transition: color 0.3s ease;
 }
 
-.navbar-nav .nav-link.active,
-.navbar-nav .nav-link:hover {
-    color: var(--color-primary);
-    font-weight: 600;
-}
+
 
 .btn-outline-primary {
     background-color: var(--color-primary) !important;
@@ -81,7 +86,7 @@ h3, h2 {
 }
 
 .main-content {
-    margin: 90px;
+    margin: 80px;
     display: flex;
     align-items: center;
 }
@@ -122,12 +127,13 @@ h3, h2 {
 
 .main-content-text button {
     border-radius: 100px;
+    margin-top: 15px;
     padding: 13px;
     font-size: 1.2rem;
     font-weight: 400;
-    width: 60%;
+    width: 55%;
     border: none;
-    background-color: var(--color-primary);
+    background-color: var(--color-primary) !important;
     color: #fff;
 }
 
@@ -220,16 +226,71 @@ h3, h2 {
 }
 
 .icon {
-    background-color: transparent;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #fff;
+    display: flex;
+    width: 2.7rem;
+    border-radius: 100px;
+    background-color: var(--color-primary);
+    padding: 4px;
     cursor: pointer;
     border: none;
     transition: 0.3s ease;
 }
 
+
 .icon svg {
+    color: var(--color-secondary);
+    width: 1.4rem;
+}
+
+
+.btn {
+    background-color: var(--color-primary) !important;
+}
+
+
+.modal-content {
+    border: 3px solid var(--color-primary);
+    border-radius: 20px;
+}
+
+.modal-header .modal-title {
     color: var(--color-primary);
-    padding-top: 5px;
-    width: 2rem;
+}
+
+.modal-body form {
+    padding: 0px 20px;
+}
+
+.modal-body button {
+    padding: 10px;
+    background-color: var(--color-primary);
+    color: #fff;
+}
+
+.modal-body button:hover {
+    padding: 10px;
+    background-color: var(--color-primary) !important;
+    color: #fff !important;
+}
+
+.modal-body input:focus {
+    border: 2px solid var(--color-primary) !important;
+    box-shadow: none;
+}
+
+.selected-products {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 25px 0px;
+}
+
+.selected-products h3 {
+    font-size: 1.2rem;
+    color: var(--color-primary);
 }
 
 
@@ -321,5 +382,13 @@ h3, h2 {
 
     .icon svg{
         width: 30px;
+    }
+
+    .modal-body form {
+        padding: 0px 0px;
+      }
+
+    .nav-link {
+        margin-left: -20px;
     }
 }
