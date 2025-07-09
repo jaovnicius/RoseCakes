@@ -1,4 +1,16 @@
 const menu = document.querySelector('.menu');
+
+const menuContent = document.querySelector('.menu');
+const product = document.querySelector('.product');
+const price = document.querySelector('.price');
+const checkoutBtn = document.querySelectorAll('.btn-buy');
+const count = document.querySelectorAll('.product-count');
+
+const inputAddress = document.querySelector('.address')
+const selectedProducts = document.querySelector('.selected-products')
+const totalValue = document.querySelector('.total');
+console.log(menuContent, product);
+
 let products = [];
 
 
@@ -28,22 +40,9 @@ function createProduct(url, alt, name, price, description, dataname, dataprice) 
 
 
 createProduct("https://i.pinimg.com/736x/ae/4c/26/ae4c26186932e8cf6fdaa0eeebf22553.jpg", "bolo no pote", "Bolo de Morango", "R$ 21,99", "Bolo fresquinho com morangos naturais.", "Morangão", "21,99");
-createProduct("https://i.pinimg.com/736x/ae/4c/26/ae4c26186932e8cf6fdaa0eeebf22553.jpg", "bolo no pote", "Bolo de Morango", "R$ 21,99", "Bolo fresquinho com morangos naturais.", "Morangão", "21,99");
-createProduct("https://i.pinimg.com/736x/ae/4c/26/ae4c26186932e8cf6fdaa0eeebf22553.jpg", "bolo no pote", "Bolo de Morango", "R$ 21,99", "Bolo fresquinho com morangos naturais.", "Morangão", "21,99");
-createProduct("https://i.pinimg.com/736x/ae/4c/26/ae4c26186932e8cf6fdaa0eeebf22553.jpg", "bolo no pote", "Bolo de Morango", "R$ 21,99", "Bolo fresquinho com morangos naturais.", "Morangão", "21,99");
-
-
-
-
-const menuContent = document.querySelector('.menu');
-const product = document.querySelector('.product');
-const price = document.querySelector('.price');
-const checkoutBtn = document.querySelectorAll('.btn-buy');
-const count = document.querySelector('.product-count');
-
-const inputAddress = document.querySelector('.address')
-const selectedProducts = document.querySelector('.selected-products')
-console.log(menuContent, product);
+createProduct("https://i.pinimg.com/736x/ae/4c/26/ae4c26186932e8cf6fdaa0eeebf22553.jpg", "bolo no pote", "Bolo de Morango", "R$ 21,99", "Bolo fresquinho com morangos naturais.", "moranguinho", "21,99");
+createProduct("https://i.pinimg.com/736x/ae/4c/26/ae4c26186932e8cf6fdaa0eeebf22553.jpg", "bolo no pote", "Bolo de Morango", "R$ 21,99", "Bolo fresquinho com morangos naturais.", "??", "21,99");
+createProduct("https://i.pinimg.com/736x/ae/4c/26/ae4c26186932e8cf6fdaa0eeebf22553.jpg", "bolo no pote", "Bolo de Morango", "R$ 21,99", "Bolo fresquinho com morangos naturais.", "??", "21,99");
 
 
 checkoutBtn.forEach(function(btn) {
@@ -52,10 +51,7 @@ checkoutBtn.forEach(function(btn) {
   });
 });
 
-
-
 menuContent.addEventListener("click", function (event) {
-
 
   let iconButton = event.target.closest(".icon")
   console.log(iconButton);
@@ -81,10 +77,8 @@ function addProduct(name, price) {
   })
   }
 
-
   updateProductList()
 }
-
 
 
 function updateProductList(){
@@ -93,21 +87,62 @@ function updateProductList(){
 
   products.forEach(item => {
     const selectedProductsElement = document.createElement("div");
+    selectedProductsElement.style.display = "flex";
+    selectedProductsElement.style.justifyContent = "space-between";
+    selectedProductsElement.style.flexWrap = "wrap";
     selectedProductsElement.innerHTML = `
-    <div>
+    <div style="display:flex; justify-items: center; align-items: center; gap:50px;">
       <div>
-        <p>Produto: ${item.name}</p>
+        <p>${item.name}</p>
         <p>Quantidade: ${item.quantity}</p>
-        <p>Valor: R$: ${item.price}</p>
+        <p>Preço: R$: ${item.price.toFixed(2)}</p>
       </div>
 
-      <div>
-        <button>
+        <button class="remove-product" data-name="${item.name}">
           Remover
         </button>
-      </div>
-    </div>`
+    </div>
+    `
+
+    total += item.price * item.quantity;
 
     selectedProducts.appendChild(selectedProductsElement)
   })
+
+  totalValue.textContent = total.toLocaleString("pt-BR", {
+    style: "currency",
+    currency: "BRL"
+  });
+  
+  count.forEach((count) => {
+  count.innerHTML = products.length;
+  });
+
+}
+
+selectedProducts.addEventListener("click", function (event){
+  event.preventDefault();
+
+  if(event.target.classList.contains("remove-product")){
+    const name = event.target.getAttribute("data-name")
+    removeProduct(name)
+  }
+})
+
+function removeProduct(name){
+  const index = products.findIndex(item => item.name === name);
+
+  if (index !== -1) {
+    const item = products[index];
+    
+    if(item.quantity > 1){
+      item.quantity -= 1;;
+      updateProductList();
+      return;
+    }
+
+    products.splice(index, 1);
+    updateProductList();
+    
+  }
 }
