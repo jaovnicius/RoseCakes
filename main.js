@@ -6,7 +6,9 @@ const price = document.querySelector('.price');
 const checkoutBtn = document.querySelectorAll('.btn-buy');
 const count = document.querySelectorAll('.product-count');
 
-const inputAddress = document.querySelector('.address')
+const inputAddress = document.getElementById('address')
+const addressWarn = document.querySelector('.addressWarn');
+const finalizeBtn = document.querySelector('.finalize-order')
 const selectedProducts = document.querySelector('.selected-products')
 const totalValue = document.querySelector('.total');
 console.log(menuContent, product);
@@ -146,3 +148,26 @@ function removeProduct(name){
     
   }
 }
+
+inputAddress.addEventListener("input", function(event){
+  let inputValue = event.target.value;
+
+  if (inputValue !== ""){
+    addressWarn.style.display = "none";
+  }
+
+})
+
+finalizeBtn.addEventListener("click", function(event){
+  event.preventDefault();
+
+  if (products.length === 0) return;
+
+  if (inputAddress.value === ""){
+    addressWarn.style.display = "block";
+  } else {
+    addressWarn.style.display = "none";
+    return;
+  };
+
+})

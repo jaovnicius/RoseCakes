@@ -270,6 +270,12 @@ h3, h2 {
     color: #fff;
 }
 
+.modal-body .addressWarn {
+    color: var(--color-primary);
+    font-weight: 400;
+    display: none;
+}
+
 .modal-body button:hover {
     padding: 10px;
     background-color: var(--color-primary) !important;
