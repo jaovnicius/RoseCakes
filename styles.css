@@ -16,6 +16,7 @@
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 * {
     font-family: "Roboto", sans-serif;
@@ -37,6 +38,7 @@ header {
 }
 
 mark {
+    font-family: "Bebas Neue", sans-serif !important;
     background-color: transparent !important;
     color: var(--color-primary) !important;
 }
@@ -64,6 +66,11 @@ mark {
 }
 
 
+.container-fluid a {
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
 
 .btn-outline-primary {
     background-color: var(--color-primary) !important;
@@ -71,9 +78,15 @@ mark {
     color: #fff;
 }
 
-.bi.bi-bag-fill {
-    color: #fff !important;
+.bi.bi-bag-heart {
+    font-size: 1.8rem;
+    color: var(--color-primary) !important;
 }
+
+.btn-buy:active {
+        border: 0px transparent !important;
+}
+
 
 
 .btn-outline-primary i {
@@ -130,9 +143,7 @@ h3, h2 {
 }
 
 .main-content-text p {
-    font-style: italic;
-    text-transform: lowercase;
-    width: 80vh;
+    width: 100vh;
     font-size: 1.6rem;
     margin: 35px 0px;
 }
@@ -252,18 +263,25 @@ h3, h2 {
     font-weight: 400;
     color: #fff;
     display: flex;
-    width: 2.7rem;
+    border: 1px solid var(--color-primary);
     border-radius: 100px;
-    background-color: var(--color-primary);
-    padding: 4px;
+    background-color: var(--color-secondary);
+    padding: 10px;
     cursor: pointer;
-    border: none;
-    transition: 0.3s ease;
+    transition: 0.1s ease;
+}
+
+.icon:active {
+    background-color: var(--color-primary);
+}
+
+.icon:active svg{
+    color: var(--color-background);
 }
 
 
 .icon svg {
-    color: var(--color-secondary);
+    color: var(--color-primary);
     width: 1.4rem;
 }
 
@@ -287,6 +305,9 @@ h3, h2 {
 }
 
 .modal-body button {
+    font-weight: 300;
+    text-transform: uppercase;
+    border: none;
     padding: 10px;
     background-color: var(--color-primary);
     color: #fff;
@@ -314,14 +335,40 @@ h3, h2 {
     flex-direction: column;
     gap: 10px;
     margin: 25px 0px;
+    padding: 10px;
 }
 
-.selected-products h3 {
+h3 {
     font-size: 1.2rem;
+    color: var(--color-primary) !important;
+}
+
+.remove-product{
+    background-color: transparent !important;
+    color: var(--color-primary) !important;
+    border: 1px solid var(--color-primary) !important;
+}
+
+.total {
+    font-family: "Bebas Neue", sans-serif !important;
+    font-weight: 600 !important;
     color: var(--color-primary);
 }
 
+.bi-envelope-paper-heart-fill {
+    margin: 0px 10px;
+}
 
+.btn {
+    background-color: transparent !important;
+}
+
+.finalize-order {
+    padding: 15px !important;
+    background-color: var(--color-primary) !important;
+    border-radius: 0px !important;
+    margin-top: 20px;
+}
 
 @media screen and (max-width: 768px) {
 
@@ -370,7 +417,7 @@ h3, h2 {
     }
 
     .main-content-text p {
-        width: 80vh;
+        width: 70vh !important;
         font-size: 1rem;
     }
 
@@ -439,6 +486,7 @@ h3, h2 {
     }
 }
 
+/*  */
 
 ::-webkit-scrollbar {
   width: 13px;
@@ -449,3 +497,15 @@ h3, h2 {
   border-radius: 6px;
   border: 3px solid #f1f1f1;
 }
+
+/* Remove as setas no Chrome, Safari, Edge, Opera */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+label {
+    color: var(--color-primary);
+}
+

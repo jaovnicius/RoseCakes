@@ -14,16 +14,16 @@
 <body>
 <header class="navbar bg-white shadow-sm">
   <div class="container-fluid">
-    <a href="#" class="nav-link d-block d-lg-none">( <mark class="product-count">0</mark> ) <mark>Lista de Produtos</mark></a>
+    <a href="#" class="nav-link d-block d-lg-none">( <mark class="product-count">0</mark> ) <mark>Sua Lista de Produtos</mark></a>
     <a class="navbar-brand fw-bold text-primary" href="#"></a>
     <button type="button" class="btn btn d-block d-lg-none btn-buy" data-bs-toggle="modal" data-bs-target="#formModal">
-      <i class="bi bi-bag-fill"></i>
+    <i class="bi bi-bag-heart"></i>
     </button>
 
     <div class="d-none d-lg-flex align-items-center gap-3">
-      <a href="#" class="nav-link">( <mark class="product-count">0</mark> ) Lista de Produtos</a>
+      <a href="#" class="nav-link">( <mark class="product-count">0</mark> )<mark> Sua Lista de Produtos</mark></a>
       <button type="button" class="btn btn-buy" data-bs-toggle="modal" data-bs-target="#formModal">
-        <i class="bi bi-bag-fill"></i>
+       <i class="bi bi-bag-heart"></i>
       </button>
     </div>
   </div>
@@ -44,20 +44,26 @@
             <label for="nome" class="form-label">Nome do(a) cliente</label>
             <input type="text" class="form-control" id="nome">
           </div>
+
+          <div class="mb-4">
+          <label for="form-label telefone">Telefone:</label>
+            <input class="form-control" type="number" id="telefone" name="telefone" placeholder="(84) 99999-9999" pattern="\(\d{2}\)\s?\d{5}-\d{4}" required>
+          </div>
           
           <div class="mb-3">
             <label for="address" class="form-label address">Endereço para entrega:</label>
             <input type="text" class="form-control" id="address">
+
             <span class="addressWarn">Digite seu endereço completo!</span>
           </div>
           
+          <h3 class="product-display">Produtos selecionados:</h3>
           <div class="selected-products">
-            <h3>Produtos selecionados:</h3>
           </div>
 
           <h4 class="total">0,00</h4>
           
-          <button type="submit" class="btn finalize-order">Finalizar pedido</button>
+          <button type="submit" class="btn finalize-order">Encaminhar pedido</button>
         </form>
       </div>
       
@@ -86,7 +92,7 @@
                 <img class="logo-mobile animate__animated animate__fadeInLeft" src="./assets/logotipo.png" alt="">
                 <h1> ROSE BOLOS</h1> 
                 <h2>Delícias no Pote</h2>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe quisquam facere iste? Enim debitis sunt eveniet fugiat aliquam alias nam itaque odit perspiciatis inventore, officiis optio ea qui quisquam iste? </p>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe quisquam facere iste? Enim debitis sunt eveniet fugiat ali </p>
                 <span>Parnamirim - RN | Avenida Principal 330 | Nova Esperança</span>
                 
                 <button>Segunda à Domingo - 08:00 às 20:00</button>
