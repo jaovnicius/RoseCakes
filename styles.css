@@ -177,6 +177,16 @@ h3, h2 {
     color: var(--color-primary);
 }
 
+.open {
+    background-color: green !important;
+    color: #fff !important;
+}
+
+.close {
+    background-color: red !important;
+    color: #fff !important;
+}
+
 .contact {
     display: flex;
     flex-direction: column;
