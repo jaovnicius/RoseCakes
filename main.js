@@ -178,4 +178,25 @@ finalizeBtn.addEventListener("click", function(event){
     return;
   };
 
-})
+});
+
+// Verifica se o restaurante está aberto com base na hora atual
+function checkRestauranteOpen() {
+  const data = new Date();
+  const hora = data.getHours();
+  return hora >= 8 && hora < 20; // Aberto entre 18h e 22h
+}
+
+// Seleciona o botão ou card de status do restaurante
+const buttonOpenOrClose = document.querySelector('.status-restaurante');
+
+// Verifica se está aberto
+const isOpen = checkRestauranteOpen();
+
+if (isOpen) {
+  buttonOpenOrClose.classList.remove('close');
+  buttonOpenOrClose.classList.add('open');
+} else {
+  buttonOpenOrClose.classList.remove('open');
+  buttonOpenOrClose.classList.add('close');
+}
