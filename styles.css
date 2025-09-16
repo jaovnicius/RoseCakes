@@ -40,6 +40,10 @@ mark {
     color: var(--color-primary) !important;
 }
 
+button {
+    background-color: transparent !important;
+}
+
 .navbar {
     position: sticky !important;
     top: 0;
@@ -69,6 +73,23 @@ mark {
     font-weight: 500;
     font-size: 1.2rem;
 }
+
+ .circle-icon {
+      width: 40px;
+      height: 40px;
+      border: 1px solid var(--color-primary);
+      border-radius: 50%;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .dash {
+      width: 20px;
+      height: 2px;
+      background-color: var(--color-primary);
+    }
 
 
 .btn-outline-primary {
@@ -117,7 +138,7 @@ h3, h2 {
 }
 
 .main-content-logo img.logo-desktop {
-    width: 420px;
+    width: 350px;
 }
 
 .main-content-text-logo{
@@ -175,16 +196,6 @@ h3, h2 {
     background-color: transparent;
     border: 1px solid var(--color-primary) !important;
     color: var(--color-primary);
-}
-
-.open {
-    background-color: green !important;
-    color: #fff !important;
-}
-
-.close {
-    background-color: red !important;
-    color: #fff !important;
 }
 
 .contact {
@@ -324,7 +335,6 @@ h3, h2 {
     text-transform: uppercase;
     border: none;
     padding: 10px;
-    background-color: var(--color-primary);
     color: #fff;
 }
 
@@ -336,7 +346,6 @@ h3, h2 {
 
 .modal-body button:hover {
     padding: 10px;
-    background-color: var(--color-primary) !important;
     color: #fff !important;
 }
 
@@ -359,9 +368,7 @@ h3 {
 }
 
 .remove-product{
-    background-color: transparent !important;
     color: var(--color-primary) !important;
-    border: 1px solid var(--color-primary) !important;
 }
 
 .total {

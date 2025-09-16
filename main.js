@@ -30,6 +30,7 @@ function createProduct(url, alt, name, price, description, dataname, dataprice) 
       <div class="price_selection">
         <p class="price_selection_item">Preço: <span class="price">${price}</span></p>
         <button class="icon" data-name="${dataname}" data-price="${dataprice}">
+        <span style="color: #B06E4D; font-size: 1.3rem;">+</span>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
             <path stroke-linecap="round" stroke-linejoin="round" d="M21 11.25v8.25a1.5 1.5 0 0 1-1.5 1.5H5.25a1.5 1.5 0 0 1-1.5-1.5v-8.25M12 4.875A2.625 2.625 0 1 0 9.375 7.5H12m0-2.625V7.5m0-2.625A2.625 2.625 0 1 1 14.625 7.5H12m0 0V21m-8.625-9.75h18c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125h-18c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125Z"/>
           </svg>
@@ -94,16 +95,24 @@ function updateProductList(){
     selectedProductsElement.style.justifyContent = "space-between";
     selectedProductsElement.style.flexWrap = "wrap";
     selectedProductsElement.innerHTML = `
-    <div style="display:flex; justify-items: center; align-items: center; gap:50px; text-transform: uppercase;">
-      <div>
+    <div style="display:flex; justify-items: center; align-items: center; gap: 20px; text-transform: uppercase; margin-bottom: 30px;">
+      <div style="display:flex ">
+        <img style="width: 100px; border-radius: 100px; height: 100px; margin-right: 10px;" src="https://i.pinimg.com/736x/ae/4c/26/ae4c26186932e8cf6fdaa0eeebf22553.jpg" alt="">
+        <div>
         <p>${item.name}</p>
         <p>Quantidade: ${item.quantity}</p>
         <p>Preço: R$: ${item.price.toFixed(2)}</p>
-      </div>
-
-        <button class="remove-product" data-name="${item.name}">
-          Remover
-        </button>
+        </div>
+        </div>
+        
+        
+          <div class="circle-icon">
+            <button class="remove-product" data-name="${item.name}">
+              <div class="dash"></div>
+            </button>
+           
+          </div>
+       
     </div>
     `
 
@@ -178,25 +187,4 @@ finalizeBtn.addEventListener("click", function(event){
     return;
   };
 
-});
-
-// Verifica se o restaurante está aberto com base na hora atual
-function checkRestauranteOpen() {
-  const data = new Date();
-  const hora = data.getHours();
-  return hora >= 8 && hora < 20; // Aberto entre 18h e 22h
-}
-
-// Seleciona o botão ou card de status do restaurante
-const buttonOpenOrClose = document.querySelector('.status-restaurante');
-
-// Verifica se está aberto
-const isOpen = checkRestauranteOpen();
-
-if (isOpen) {
-  buttonOpenOrClose.classList.remove('close');
-  buttonOpenOrClose.classList.add('open');
-} else {
-  buttonOpenOrClose.classList.remove('open');
-  buttonOpenOrClose.classList.add('close');
-}
+})
